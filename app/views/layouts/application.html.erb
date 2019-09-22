@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OMNIbnk</title>
+    <title>Movie Library</title>
     <link rel="icon" type="image/png" href="/images/omni1.png" />
     <%= csrf_meta_tags %>
 
@@ -22,17 +22,12 @@
 <% end %>
 
       </div>
-      <h1 id="titulo">OMNIbnk</h1>
-
-      <nav id="titulo">
-      <ul class="fancyNav">
-          <li id="home"><a href="#home" class="homeIcon">Home</a></li>
-          <li id="news"><a href="#news">News</a></li>
-          <li id="about"><a href="#about">About us</a></li>
-          <li id="services"><a href="#services">Services</a></li>
-          <li id="contact"><a href="#contact">Contact us</a></li>
-      </ul>
-    </nav>
+      
+      <h1 id="titulo">
+      <%= image_tag("logo2.png",width:'10%') %>
+      <%= image_tag("letras.png",width:'30%') %>
+<%= image_tag("omni2.png",width:'12%') %>
+</h1>
     </header>
     <main id="principal">
     <% if notice %>
@@ -42,18 +37,26 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
-      <div id="menuprincipal">
-        <% if user_signed_in? %>
-          <ul class="btn-group-vertical">     
-          <li type="button" class="btn btn-secondary"><%= link_to 'Catalogue' %></li> 
-            <li type="button" class="btn btn-secondary"><%= link_to 'Movie Countries', countries_path %></li>
-            <li type="button" class="btn btn-secondary"><%= link_to 'Movie Genres', genders_path %></li>
-            <li type="button" class="btn btn-secondary"><%= link_to 'Movie Classifications', classifications_path %></li>
-            <li type="button" class="btn btn-secondary"><%= link_to 'Movie', movies_path %></li>
-          </ul>
-        <% end %>
-      </div>
-      <div id="contenido">
+ <div id="menuprincipal">
+ <% if user_signed_in? %>
+      <input type="checkbox" id="css3menu-switcher" class="c3m-switch-input">
+      <ul id="css3menu0" class="topmenu">    
+        <li class="switch"><label onclick="" for="css3menu-switcher"></label></li>
+        <li class="topfirst"><%= link_to 'Home', welcome_index_path %></li>
+        <li class="topfirst"><a href="#" style="width:140px;"><span>Catalogue</span></a>
+        <ul>
+
+          <li class="subfirst"><%= link_to 'Movie Countries', countries_path %></li>
+          <li class="subfirst"><%= link_to 'Movie Genres', genders_path %></li>
+          <li class="subfirst"><%= link_to 'Movie Classifications', classifications_path %></li>
+        </ul></li>
+        <li class="topfirst"><%= link_to 'Movie', movies_path %></li>
+        <li class="topfirst"><%= link_to 'Profile', edit_user_registration_path %></li>
+        <li class="topfirst"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>   </li>  
+      </ul>
+      <% end %>
+ </div>
+      <div id="contenido" >
           <%= yield %>
       </div>
     </main>

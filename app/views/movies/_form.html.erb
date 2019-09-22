@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :country_id %>
-    <%= form.text_field :country_id, id: :movie_country_id %>
+    <%= form.collection_select :country_id, Country.all, :id, :name %>
   </div>
 
   <div class="field">
@@ -38,12 +38,12 @@
 
   <div class="field">
     <%= form.label :gender_id %>
-    <%= form.text_field :gender_id, id: :movie_gender_id %>
+    <%= form.collection_select :gender_id, Gender.all, :id, :name %>
   </div>
 
   <div class="field">
     <%= form.label :classification_id %>
-    <%= form.text_field :classification_id, id: :movie_classification_id %>
+    <%= form.collection_select :classification_id, Classification.all, :id, :name %>
   </div>
 
   <div class="field">
