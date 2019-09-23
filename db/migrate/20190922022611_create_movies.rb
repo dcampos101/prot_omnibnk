@@ -11,7 +11,6 @@ class CreateMovies < ActiveRecord::Migration[5.1]
       t.text :description
       t.integer :rating
       t.binary :film
-      add_index :movies, rating
       t.timestamps
     end
   end
