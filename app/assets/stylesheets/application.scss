@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require jquery-ui/datepicker
  *= require_tree .
  *= require_self
  */
@@ -42,6 +43,8 @@ $headings-font-weight:   300 !default;
   //font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 30px;
+color: #4cb2e6;
+text-align: left;
 
 
  }
@@ -53,6 +56,7 @@ $headings-font-weight:   300 !default;
  p{
   font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
+
  }
 
  a{
@@ -68,11 +72,11 @@ a:hover {
 
 a:visited {
   /*left: 42%;*/
-  color: rgb(59, 255, 98);
+  color: rgb(56, 11, 138);
 }
 
  #login{
-  background: #2780E3; //!important
+  background: rgb(93, 200, 226); //!important
   font-size: 12pt;
   height: 50PX; //25
   width: 100%;
@@ -81,7 +85,7 @@ color: white;
  }
  
  #titulo{
- background: #2780E3;
+ background: rgb(93, 200, 226);
 color: white;
 margin: 0;
 border: 0;
@@ -96,19 +100,14 @@ top: 25%;
 //background: white;
 //background-image:url('../images/fondo1.jpg'); 
 //background: image-set('../images/fondo1.jpg');
-background: url('../images/fond2.jpg');
+
 margin: 2px;
 border: 2px;
 padding: 0;
  }
 
- main{
-  //background-image:image-url('../images/fond2.jpg'); 
-  background: url('../images/fond2.jpg');
- }
-
  #menuprincipal{
-background: lightgray;
+background: rgb(235, 232, 232);
 color: white;
 margin: 0px;
 padding: 0px;
@@ -123,15 +122,16 @@ align-content: center;
 
  #contenido{
 margin: 1px;
-//padding: 15px;
+padding: 25px;
 
-width: 76%;
+width: 76.5%;
 height: 85.4%;
-left: 27.2%;
+left: 23.6%;
 display:inline-table;
 box-sizing: border-box; 
 //min-height: 10px;
 position: absolute;
+background: rgb(247, 242, 242);
 //top: 8.5%;
 //background: lightgray;
 //background-image: image(assets/images);
@@ -151,7 +151,17 @@ height: 100%;
  }
 
 
-  
+ table{
+	border-collapse: separate;
+    border-spacing: 1px;
+	//border: black 1px solid;	
+ }
+ tbody {
+	display: table-row-group;
+    vertical-align: middle;
+	border-color: inherit;
+	//border: black 1px solid;	
+}
 /*----------------------------
 	CSS3 Animated Navigation
 -----------------------------*/
@@ -300,8 +310,7 @@ height: 100%;
 	width: 16px;
 }
 
-//////////////////////////
-
+/*Menu 1*/
  
 /*Clase*/
 .contenedor {
@@ -364,6 +373,7 @@ width: 400px;
 animation-duration: 4s;*/
 }
 
+/*Menu */
 ul#css3menu0,ul#css3menu0 ul{
 	margin:0;list-style:none;padding:0;background-color:#424542;border-width:2px;border-style:solid;border-color:#FFF;-moz-border-radius:7px;-webkit-border-radius:7px;border-radius:7px;}
 ul#css3menu0 ul{
@@ -421,4 +431,46 @@ ul#css3menu0 li.subfirst>a{
 		display: none;		position: relative;		width: 100% !important;}
 	ul#css3menu0 > li.switch,.c3m-switch-input:checked + ul#css3menu0 > li + li {
 		display: block;}
-	ul#css3menu0 > li.switch > label {		position: absolute;cursor: pointer;top: 0;left: 0;right: 0;bottom: 0;}}
+	ul#css3menu0 > li.switch > label {
+		position: absolute;cursor: pointer;top: 0;left: 0;right: 0;bottom: 0;}
+	}
+
+/*Slider imagenes movie*/
+.slider {
+	width: 50%;
+	margin: auto;
+	overflow: hidden;
+}
+
+.slider ul {
+	display: flex;
+	padding: 0;
+	width: 400%;
+	
+	animation: cambio 20s infinite alternate linear;
+}
+
+.slider li {
+	width: 60%;
+	list-style: none;
+}
+
+.slider img {
+	width: 60%;
+}
+
+@keyframes cambio {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
+}
+
+

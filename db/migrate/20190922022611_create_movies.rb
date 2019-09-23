@@ -2,7 +2,7 @@ class CreateMovies < ActiveRecord::Migration[5.1]
   def change
     create_table :movies do |t|
       t.string :title
-      t.text :premiere_date
+      t.date :premiere_date
       t.string :director
       t.references :country, foreign_key: true
       t.text :cast
@@ -11,7 +11,7 @@ class CreateMovies < ActiveRecord::Migration[5.1]
       t.text :description
       t.integer :rating
       t.binary :film
-
+      add_index :movies, rating
       t.timestamps
     end
   end

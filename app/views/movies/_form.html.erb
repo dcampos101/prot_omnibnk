@@ -11,56 +11,55 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :movie_title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :premiere_date %>
-    <%= form.text_area :premiere_date, id: :movie_premiere_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :director %>
-    <%= form.text_field :director, id: :movie_director %>
-  </div>
-
-  <div class="field">
-    <%= form.label :country_id %>
-    <%= form.collection_select :country_id, Country.all, :id, :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cast %>
-    <%= form.text_area :cast, id: :movie_cast %>
-  </div>
-
-  <div class="field">
-    <%= form.label :gender_id %>
-    <%= form.collection_select :gender_id, Gender.all, :id, :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :classification_id %>
-    <%= form.collection_select :classification_id, Classification.all, :id, :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :movie_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :rating %>
-    <%= form.number_field :rating, id: :movie_rating %>
-  </div>
-
-  <div class="field">
-    <%= form.label :film %>
-    <%= form.text_field :film, id: :movie_film %>
-  </div>
-
+ <table>
+  <tbody><div class="field">
+    <tr>
+    
+    <th><%= form.label :title %></th>
+    <th></th>
+    <th><%= form.text_field :title, id: :movie_title %></th>
+    </tr>
+    <tr>
+    <th><%= form.label :premiere_date %></th>
+    <th></th>
+    <th><%= form.text_field :premiere_date, id: :movie_premiere_date %></th>
+    </tr>
+    <tr>
+      <th><%= form.label :director %></th>
+      <th></th>
+      <th><%= form.text_field :director, id: :movie_director %></th>
+    </tr>
+    <tr>
+      <th><%= form.label :country_id %><th>
+      <th><%= form.collection_select :country_id, Country.all, :id, :name %></th>
+    </tr>
+    <tr>
+      <th><%= form.label :cast %><th>
+      <th><%= form.text_area :cast, id: :movie_cast %></th>
+    </tr>
+    <tr>
+      <th><%= form.label :gender_id %><th>
+      <th><%= form.collection_select :gender_id, Gender.all, :id, :name %></th>
+    </tr>
+    <tr>
+      <th><%= form.label :classification_id %><th>
+      <th><%= form.collection_select :classification_id, Classification.all, :id, :name %></th>
+    </tr>
+    <tr>
+      <th><%= form.label :description %><th>
+      <th><%= form.text_area :description, id: :movie_description %></th>
+    </tr>
+    <tr>
+      <th><%= form.label :rating %><th>
+      <th><%= form.number_field :rating, id: :movie_rating %></th>
+    </tr>
+    <tr>
+      <th><%= form.label :film %><th>
+      <th><%= form.number_field :film, id: :movie_film %></th>
+    </tr>
+    </div>
+</tbody>
+</table>
   <div class="actions">
     <%= form.submit %>
   </div>

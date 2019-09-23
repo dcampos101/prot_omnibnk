@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Movie Library</title>
-    <link rel="icon" type="image/png" href="/images/omni1.png" />
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<head>
+  <title>Movie Library</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
   <header>
+
   <div id="login">
   <% if user_signed_in? %>
   Login as <strong><%= current_user.email %></strong>.
@@ -26,8 +25,8 @@
       <h1 id="titulo">
       <%= image_tag("logo2.png",width:'10%') %>
       <%= image_tag("letras.png",width:'30%') %>
-<%= image_tag("omni2.png",width:'12%') %>
-</h1>
+      <%= image_tag("omni2.png",width:'12%') %>
+      </h1>
     </header>
     <main id="principal">
     <% if notice %>
